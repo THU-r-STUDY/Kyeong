@@ -27,3 +27,16 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# .idea 폴더 및 기타 프로젝트 관련 파일 제외
+.idea/
+*.iml
+
+# 빌드 파일 제외
+/build/
+out/
+
+# src 폴더 내 다른 파일 제외
+src/*
+!src/stack/
+!src/queue/
