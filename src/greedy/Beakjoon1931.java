@@ -27,17 +27,12 @@ public class Beakjoon1931 {
         Arrays.sort(meetingTimes, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
-                //종료 시간이 큰(더 늦은) 경우 뒤로 보낸다.
-                if(o1[1]> o2[1]) return 1;
-                //종료 시간이 더 작은(빠른) 경우 그대로 둔다.
-                else if(o1[1]<o2[1]) return -1;
-                //종료 시간이 같은 경우
-                else{
-                    //시작시간이 더 늦으면 뒤로 보내고
-                    if(o1[0] > o2[0]) return 1;
-                    //시작 시간이 더 빠른 경우 그대로 둔다.
-                    else return -1;
+                if (o1[1] == o2[1]) {
+                    return o1[0] - o2[0];
                 }
+                //첫 번째 종료시간이 더 큰 경우 양수 반환 -> 뒤로 보낸다
+                //첫 번째 종료시간이 더 작은 경우 음수 반환 -> 그대로
+                return o1[1] - o2[1];
             }
         });
 
